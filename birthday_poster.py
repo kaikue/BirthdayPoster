@@ -1,6 +1,6 @@
 #BirthdayPoster v1.0 by Kai Kuehner
 #Requires Python Requests: http://docs.python-requests.org/en/latest/
-#Replace YOUR_ID with your Facebook ID or URL and ACCESS_KEY with a Facebook access token (from graph.facebook.com)
+#Replace YOUR_ID with your Facebook ID or URL and ACCESS_KEY with a Facebook access token (from https://developers.facebook.com/tools/explorer/)
 
 import webbrowser
 import requests
