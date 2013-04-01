@@ -1,6 +1,6 @@
 #BirthdayPoster v1.0 by Kai Kuehner
 #Requires Python Requests: http://docs.python-requests.org/en/latest/
-#Replace YOUR_ID with your Facebook ID or URL
+#Replace YOUR_ID with your Facebook ID or URL and ACCESS_KEY with a Facebook access token (from graph.facebook.com)
 
 import webbrowser
 import requests
@@ -8,11 +8,11 @@ import datetime
 
 
 YOUR_ID = "put your ID here"
-
+ACCESS_TOKEN = "put your access token here"
 
 ids = {}
 today = datetime.date.today()
-friends = requests.get("https://graph.facebook.com/" + YOUR_ID + "?fields=friends.fields(birthday,first_name)&access_token=AAACEdEose0cBACNQLY6K7sHkgoLDzn27DM9TEnRhcWSiJ0pafo843InLQZBvsiAbHX1UznVZCo6n93xzxZALl6YbZAo5KriOtBrgshe1cKrz1iPrVylZA")
+friends = requests.get("https://graph.facebook.com/" + YOUR_ID + "?fields=friends.fields(birthday,first_name)&access_token=" + ACCESS_TOKEN)
 text = friends.text
 datastring = text[text.find("["):text.find("]") + 1]
 exec("datalist = " + datastring)
